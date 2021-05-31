@@ -1,0 +1,10 @@
+.header {
+    height: 75px;
+}
+.header__title {
+    display: flex;
+}
+
+.navigation {
+    display: flex;
+}

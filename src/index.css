@@ -33,3 +33,33 @@ body{
     justify-content: right;
 }
 
+.burger__preview {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.burger__item {
+    width: 300px;
+    height: 450px;
+    margin: 10px;
+}
+
+.burger__item_title{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.burger__item_description {
+    font-size: 14px;
+    height: 100px;
+    width: 300px;
+}
+
+.burger__item_button {
+    text-align: center;
+}
+
+.burger__item_price {
+    text-align: center;
+}

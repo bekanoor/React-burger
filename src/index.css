@@ -1,22 +1,12 @@
-
-body{
-    background-color: rgb(80, 80, 80);
-}
-
-#root {
-    background-color: rgb(80, 80, 80);
-}
-
 .wrapper {
     margin: 0 auto;
     width: 1280px;
     background-color: rgb(255, 255, 255);
 }
 
-.header {
-    height: 75px;
+.section__title{
+    margin: 32px 0px;
 }
-
 .header__title_h {
     font-weight: bold;
     font-size: 24px;
@@ -27,10 +17,6 @@ body{
 }
 .header__title {
     display: flex;
-}
-
-.navigation {
-    justify-content: right;
 }
 
 .burger__preview {
@@ -48,18 +34,24 @@ body{
 .burger__item_title{
     font-weight: bold;
     font-size: 18px;
+    text-align: left;
 }
 
 .burger__item_description {
     font-size: 14px;
     height: 100px;
-    width: 300px;
+    width: 250px;
+    text-align: left;
 }
 
+.burger__items {
+    width: 250px;
+    align-items: center
+}
 .burger__item_button {
-    text-align: center;
+    float: right;
 }
 
 .burger__item_price {
-    text-align: center;
+    float: left;
 }

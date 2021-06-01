@@ -3,25 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import {Button, Image, Navbar, Container, Nav } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
-const bd = require('./public/bd/date.json')
-
-function EatList() {
-    const review = bd.map((item, index) => 
-        <div className='burger__item'>
-            <Image height="250" width="250" src={item.path} alt={item.path}/>
-            <div  className='burger__item_title'>{item.name}</div>                
-            <div className='burger__item_description'>{item.description}</div>                
-            <div className='burger__item_price'>{item.price} р.</div>
-            <div className='burger__item_button'><Button variant="danger">Заказать</Button></div>                
-        </div>
-    )
-
-    return (
-        <div className='burger__preview'>
-            {review}
-        </div>
-    )
-}
+import EatList from './eatList'
+const burgers = require('./public/bd/burgers.json')
+const snacks = require('./public/bd/snacks.json')
 
 function HeaderMenu() {
     return (
@@ -57,7 +41,8 @@ function Main() {
     return (
         <div className="wrapper">
             <HeaderMenu/>
-            <EatList/>
+            <EatList bd={burgers} foodType="Бэргеры"/>
+            <EatList bd={snacks} foodType="Закуски"/>
         </div>
     );
 }
@@ -66,5 +51,3 @@ ReactDOM.render(
     <Main />,
     document.getElementById('root')
   );
-
-

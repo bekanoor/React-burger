@@ -2,6 +2,14 @@ import React from 'react';
 import {Button, Image} from 'react-bootstrap'
 
 export default function EatList(props) {
+    const slider = [
+        './public/img/slider1.jpg',
+        './public/img/slider2.jpg',
+        './public/img/slider3.jpg',
+        './public/img/slider4.jpg',
+        './public/img/slider5.jpg'
+    ];
+    
     const review = props.bd.map((item, index) => 
         <div className='burger__item'>
             <Image height="250" width="250" src={item.path} alt={item.path}/>

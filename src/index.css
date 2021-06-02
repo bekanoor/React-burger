@@ -13,36 +13,17 @@
 .header__title_p { font-size: 14px; }
 .header__title { display: flex; }
 /*------slider------*/
-.slider__wrapper {
-    width: 1024px;
-    margin: 0 auto;
-}
-.slider__container {
-    overflow: hidden;
-}
-.slider__track{ 
-    width: 1024px;
-    height: 300px;
-    display: flex;
-    transition: .2s;
-    position: relative;
-}
-.slider__item{ 
+.swiper-container {
+    width: 1300px;
+    height: 410px;
+  }
+  
+.swiper-slide img {
     box-shadow: rgba(84, 87, 99, 0.5) 0px 2px 10px -2px;
-    image-rendering: auto;
-    height: 300px;
-    width: 900px;
-    margin-right: 24px;
+    height: 400px;
+    width: 1024px;
+    margin-left: 126px;
     border-radius: 20px;
-}
-.slider__item:nth-child(3n+1) {
-    background-color: red;
-}
-.slider__item:nth-child(3n+2) {
-    background-color: green;
-}
-.slider__item:nth-child(3n+3) {
-    background-color: black;
 }
 /*-------main-------*/
 .burger__preview {
@@ -81,3 +62,4 @@
 .burger__item_price {
     float: left;
 }
+

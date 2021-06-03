@@ -1,15 +1,10 @@
-@font-face {
-    font-family: 'Comfortaa';
-    font-style: normal;
-    font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/comfortaa/v25/1Pt_g8LJRfWJmhDAuUsSQamb1W0lwk4S4WjMDrMfIA.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+html {
+    scroll-behavior: smooth;
 }
 
-html * {
-    scroll-behavior: smooth;
-    font-size: 1em !important;
-    font-family: 'Comfortaa' !important;
+body {
+    font-family: 'Roboto', sans-serif;
 }
 
 .wrapper {
@@ -56,12 +51,18 @@ html * {
 .burger__item_img { 
     width: 250px;
     height: 250px;
+    position: relative;
+}
+
+.burger__item_img:hover {
+    bottom: 5px;
 }
 
 .burger__item_title {
     font-weight: bold;
     font-size: 18px;
     text-align: left;
+    font-family: 'Roboto', sans-serif;
 }
 
 .burger__item_description {
@@ -69,6 +70,8 @@ html * {
     height: 100px;
     width: 250px;
     text-align: left;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
 }
 
 .burger__items {

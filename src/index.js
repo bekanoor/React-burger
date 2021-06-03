@@ -16,10 +16,10 @@ function Main() {
         <div className="wrapper">
             <HeaderMenu/>
             <Carousel/>
-            {/* <EatList bd={burgers} foodType="Бэргеры" name="Бэргеры"/>
+            <EatList bd={burgers} foodType="Бэргеры" name="Бэргеры"/>
             <EatList bd={snacks} foodType="Закуски" name="Закуски"/>
             <EatList bd={desserts} foodType="Десерты" name="Десерты"/>
-            <EatList bd={drinks} foodType="Напитки" name="Напитки"/> */}
+            <EatList bd={drinks} foodType="Напитки" name="Напитки"/>
         </div>
     );
 }

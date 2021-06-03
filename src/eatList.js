@@ -12,7 +12,7 @@ export default function EatList(props) {
     
     const review = props.bd.map((item, index) => 
         <div className='burger__item'>
-            <Image height="250" width="250" src={item.path} alt={item.path}/>
+            <Image className="burger__item_img" src={item.path} alt={item.path}/>
             <div  className='burger__item_title'>{item.name}</div>                
             <div className='burger__item_description'>{item.description}</div>  
             <div className='burger__items' >
@@ -24,7 +24,7 @@ export default function EatList(props) {
 
     return (
         <div>
-            <h1 className='section__title'>
+            <h1 className='section__title'  id={props.name}>
                 {props.foodType}
             </h1>
             <div className='burger__preview'>

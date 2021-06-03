@@ -15,17 +15,17 @@ export default function HeaderMenu() {
             </div>
             <div className="navigation">
                 <Navbar expand="lg">
-                        <Navbar.Brand href="#home">Гамбургеры</Navbar.Brand>
+                        <Navbar.Brand href="#Бэргеры">Бэргеры</Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="#link">Закуски</Nav.Link>
-                            <Nav.Link href="#link">Десерты</Nav.Link>
-                            <Nav.Link href="#link">Напитки</Nav.Link>
-                            <Nav.Link href="#link">Контакты</Nav.Link>
+                            <Nav.Link href="#Закуски">Закуски</Nav.Link>
+                            <Nav.Link href="#Десерты">Десерты</Nav.Link>
+                            <Nav.Link href="#Напитки">Напитки</Nav.Link>
+                            <Nav.Link href="#Контакты">Контакты</Nav.Link>
                         </Nav>
                         </Navbar.Collapse>
-                        <Button className="nav_btn" variant="success">Корзина</Button>
+                        <Button className="nav_btn" variant="success">Корзина | 0</Button>{' '}
                 </Navbar>
             </div>
         </div>

@@ -1,3 +1,17 @@
+@font-face {
+    font-family: 'Comfortaa';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/comfortaa/v25/1Pt_g8LJRfWJmhDAuUsSQamb1W0lwk4S4WjMDrMfIA.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+html * {
+    scroll-behavior: smooth;
+    font-size: 1em !important;
+    font-family: 'Comfortaa' !important;
+}
+
 .wrapper {
     margin: 0 auto;
     width: 1280px;
@@ -11,7 +25,7 @@
 }
 
 .header__title_p { font-size: 14px; }
-.header__title { display: flex; }
+.header__title { display: flex;}
 /*------slider------*/
 .swiper-container {
     width: 1300px;
@@ -20,9 +34,10 @@
   
 .swiper-slide img {
     box-shadow: rgba(84, 87, 99, 0.5) 0px 2px 10px -2px;
-    height: 400px;
+    height: 350px;
     width: 1024px;
     margin-left: 126px;
+    margin-top: 20px;
     border-radius: 20px;
 }
 /*-------main-------*/
@@ -38,7 +53,12 @@
     margin: 10px;
 }
 
-.burger__item_title{
+.burger__item_img { 
+    width: 250px;
+    height: 250px;
+}
+
+.burger__item_title {
     font-weight: bold;
     font-size: 18px;
     text-align: left;
@@ -53,13 +73,8 @@
 
 .burger__items {
     width: 250px;
-    align-items: center
+    height: 40px;
 }
-.burger__item_button {
-    float: right;
-}
+.burger__item_button { float: right; }
 
-.burger__item_price {
-    float: left;
-}
-
+.burger__item_price { float: left; margin-top: 8px; }

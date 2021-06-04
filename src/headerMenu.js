@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Button, Image, Navbar, Nav } from 'react-bootstrap'
+import OrderBasket from './orderBasket'
 
+export default function HeaderMenu(props) {
 
-export default function HeaderMenu() {
     return (
         <div className="header">
             <div className="header__title">
@@ -25,7 +26,7 @@ export default function HeaderMenu() {
                             <Nav.Link href="#Контакты">Контакты</Nav.Link>
                         </Nav>
                         </Navbar.Collapse>
-                        <Button className="nav_btn" variant="success">Корзина | 0</Button>{' '}
+                        <OrderBasket count={props.count} setActive={props.setActive}/>
                 </Navbar>
             </div>
         </div>

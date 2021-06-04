@@ -13,7 +13,7 @@ export default function Carousel() {
   return (
     <>
     <Swiper slidesPerView={1} spaceBetween={30} loop={true}  autoplay={{
-  "delay": 3500,
+  "delay": 5000,
   "disableOnInteraction": false
 }} pagination={{
     "clickable": true

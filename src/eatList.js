@@ -2,14 +2,8 @@ import React from 'react';
 import {Button, Image} from 'react-bootstrap'
 
 export default function EatList(props) {
-    const slider = [
-        './public/img/slider1.jpg',
-        './public/img/slider2.jpg',
-        './public/img/slider3.jpg',
-        './public/img/slider4.jpg',
-        './public/img/slider5.jpg'
-    ];
-    
+
+
     const review = props.bd.map((item, index) => 
         <div className='burger__item'>
             <Image className="burger__item_img" src={item.path} alt={item.path}/>
@@ -17,7 +11,7 @@ export default function EatList(props) {
             <div className='burger__item_description'>{item.description}</div>  
             <div className='burger__items' >
                 <div className='burger__item_price'>{item.price} ₽</div>
-                <div className='burger__item_button'><Button variant="danger">Заказать</Button></div>  
+                <div className='burger__item_button' onClick={props.changeValue}><Button variant="danger">Заказать</Button></div>  
             </div>              
         </div>
     )

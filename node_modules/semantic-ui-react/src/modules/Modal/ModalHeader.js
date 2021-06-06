@@ -1,4 +1,4 @@
-import cx from 'classnames'
+import cx from 'clsx'
 import PropTypes from 'prop-types'
 import React from 'react'
 
@@ -15,7 +15,7 @@ import {
  */
 function ModalHeader(props) {
   const { children, className, content } = props
-  const classes = cx(className, 'header')
+  const classes = cx('header', className)
   const rest = getUnhandledProps(ModalHeader, props)
   const ElementType = getElementType(ModalHeader, props)
 

@@ -17,11 +17,11 @@ export default function Carousel() {
   "disableOnInteraction": false
 }} pagination={{
     "clickable": true
-    }} navigation={true} className="mySwiper">
+    }} navigation={true} >
         <SwiperSlide><img src="/src/public/img/slider1.jpg" /></SwiperSlide>
-        <SwiperSlide><img src="/src/public/img/slider2.jpeg" />
-        </SwiperSlide><SwiperSlide><img src="/src/public/img/slider3.jpg" />
-        </SwiperSlide><SwiperSlide><img src="/src/public/img/slider4.jpg" /></SwiperSlide>
+        <SwiperSlide><img src="/src/public/img/slider2.jpeg"/></SwiperSlide>
+        <SwiperSlide><img src="/src/public/img/slider3.jpg" /></SwiperSlide>
+        <SwiperSlide><img src="/src/public/img/slider4.jpg" /></SwiperSlide>
         <SwiperSlide><img src="/src/public/img/slider5.png" /></SwiperSlide>
   </Swiper>
     </>

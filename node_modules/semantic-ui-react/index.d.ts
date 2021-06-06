@@ -1,6 +1,6 @@
 // Third party
 
-export { Ref, RefProps } from '@stardust-ui/react-component-ref'
+export { Ref, RefProps } from '@fluentui/react-component-ref'
 
 // Addons
 
@@ -9,11 +9,6 @@ export {
   ConfirmProps,
   StrictConfirmProps,
 } from './dist/commonjs/addons/Confirm'
-export {
-  default as MountNode,
-  MountNodeProps,
-  StrictMountNodeProps,
-} from './dist/commonjs/addons/MountNode'
 export {
   default as Pagination,
   PaginationProps,
@@ -31,14 +26,12 @@ export {
   StrictPortalInnerProps,
 } from './dist/commonjs/addons/Portal/PortalInner'
 export { default as Radio, RadioProps, StrictRadioProps } from './dist/commonjs/addons/Radio'
-export {
-  default as Responsive,
-  ResponsiveProps,
-  ResponsiveWidthShorthand,
-  StrictResponsiveProps,
-} from './dist/commonjs/addons/Responsive'
 export { default as Select, SelectProps } from './dist/commonjs/addons/Select'
-export { default as TextArea, TextAreaProps, StrictTextAreaProps } from './dist/commonjs/addons/TextArea'
+export {
+  default as TextArea,
+  TextAreaProps,
+  StrictTextAreaProps,
+} from './dist/commonjs/addons/TextArea'
 export {
   default as TransitionablePortal,
   TransitionablePortalProps,
@@ -501,6 +494,11 @@ export {
   StrictModalDescriptionProps,
 } from './dist/commonjs/modules/Modal/ModalDescription'
 export {
+  default as ModalDimmer,
+  ModalDimmerProps,
+  StrictModalDimmerProps,
+} from './dist/commonjs/modules/Modal/ModalDimmer'
+export {
   default as ModalHeader,
   ModalHeaderProps,
   StrictModalHeaderProps,
@@ -625,11 +623,7 @@ export {
   StrictCardMetaProps,
 } from './dist/commonjs/views/Card/CardMeta'
 
-export {
-  default as Comment,
-  CommentProps,
-  StrictCommentProps,
-} from './dist/commonjs/views/Comment'
+export { default as Comment, CommentProps, StrictCommentProps } from './dist/commonjs/views/Comment'
 export {
   default as CommentAction,
   CommentActionProps,

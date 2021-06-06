@@ -1,4 +1,4 @@
-import cx from 'classnames'
+import cx from 'clsx'
 import _ from 'lodash'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -60,7 +60,7 @@ function CardGroup(props) {
   }
 
   const itemsJSX = _.map(items, (item) => {
-    const key = item.key || [item.header, item.description].join('-')
+    const key = item.key ?? [item.header, item.description].join('-')
     return <Card key={key} {...item} />
   })
 

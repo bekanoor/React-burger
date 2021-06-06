@@ -13,26 +13,37 @@ const desserts = require('./public/bd/desserts.json')
 const drinks = require('./public/bd/drinks.json')
 
 function Main() {
-    const[count, setCount] = useState(0);
-    const[modalActive, setModalActive] = useState(false);
+    const[state, setState] = useState({
+            modalActive: false,
+            basket: []
+    })
+        
+    const {modalActive, basket} = state;
 
-   
-    function changeValueIntoBasket() {
-        setCount(count + 1);
+    function setModalActive(isActive) {
+        setState({...state, modalActive: isActive})
+    }
+
+    function addItemToBasket(item) { 
+        setState({...state, basket: [...basket, item]})
+    }
+
+    function removeItem(index) {
+        let temp = basket.slice('');
+        temp.splice(index, 1);
+        setState({...state, basket: temp})
     }
 
     return (
         <div className="wrapper">
-            <HeaderMenu  count={count} setActive={() => setModalActive(true)}/>
-            {/* <Carousel/>
-            <EatList bd={burgers} foodType="Бэргеры" name="Бэргеры"/>
-            <EatList bd={snacks} foodType="Закуски" name="Закуски"/> */}
-            {/* <EatList changeValue={() => changeValueIntoBasket()} bd={desserts} foodType="Десерты" name="Десерты"/> */}
-            {/* <EatList bd={drinks} foodType="Напитки" name="Напитки"/> */}
-            <Modal active={modalActive} setActive={setModalActive}>
-            <p>qwdqwdqwddddddddddddddddddd</p>
-            <p>qwdqwdqwddddddddddddddddddd</p>
-            </Modal>
+            <HeaderMenu  basket={basket} setActive={setModalActive}/>
+            {/* <Carousel/> */}
+            <EatList bd={burgers} addItemToBasket={addItemToBasket} foodType="Бэргеры" name="Бэргеры"/>
+            <EatList bd={snacks} addItemToBasket={addItemToBasket} foodType="Закуски" name="Закуски"/> 
+            <EatList bd={desserts} addItemToBasket={addItemToBasket} foodType="Десерты" name="Десерты"/>
+            <EatList bd={drinks} addItemToBasket={addItemToBasket} foodType="Напитки" name="Напитки"/> 
+            <Modal basket={basket}  active={modalActive} setActive={setModalActive} removeItem={removeItem}/>
+            
         </div>
     );
 }

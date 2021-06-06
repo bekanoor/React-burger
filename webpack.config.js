@@ -7,10 +7,6 @@ const htmlPlugin = new HtmlWebpackPlugin({
 });
 
 module.exports = {
-    /**
-     * Секции entry и output в данном случае можно было бы опустить,
-     * т.к. по умолчанию заданы именно такие настройки.
-     */
     entry: './src/index.js',
     output: {
         filename: 'main.js',
@@ -30,6 +26,17 @@ module.exports = {
             {
                 test: /\.less$/,
                 use: ["style-loader", "css-loader", "less-loader"]
+            },
+            {
+                test: /\.s[ac]ss$/i,
+                use: [
+                  // Creates `style` nodes from JS strings
+                  "style-loader",
+                  // Translates CSS into CommonJS
+                  "css-loader",
+                  // Compiles Sass to CSS
+                  "sass-loader",
+                ],
             },
             {
                 test: /\.(woff(2)?|ttf|eot|svg|png|jpe?g|gif)(\?v=\d+\.\d+\.\d+)?$/,

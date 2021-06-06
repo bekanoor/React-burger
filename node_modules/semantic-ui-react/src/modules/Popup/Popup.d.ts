@@ -1,9 +1,17 @@
 import * as React from 'react'
+import * as Popper from '@popperjs/core'
 
 import { SemanticShorthandItem } from '../../generic'
 import { StrictPortalProps } from '../../addons/Portal'
-import { default as PopupContent, PopupContentProps } from './PopupContent'
-import { default as PopupHeader, PopupHeaderProps } from './PopupHeader'
+import PopupContent, { PopupContentProps } from './PopupContent'
+import PopupHeader, { PopupHeaderProps } from './PopupHeader'
+
+type PopperOffsetsFunctionParams = {
+  popper: Popper.Rect
+  reference: Popper.Rect
+  placement: Popper.Placement
+}
+type PopperOffsetsFunction = (params: PopperOffsetsFunctionParams) => [number?, number?]
 
 export interface PopupProps extends StrictPopupProps {
   [key: string]: any
@@ -26,7 +34,7 @@ export interface StrictPopupProps extends StrictPortalProps {
   content?: SemanticShorthandItem<PopupContentProps>
 
   /** Existing element the pop-up should be bound to. */
-  context?: object | React.RefObject<HTMLElement>
+  context?: Document | Window | HTMLElement | React.RefObject<HTMLElement>
 
   /** A disabled popup only renders its trigger. */
   disabled?: boolean
@@ -49,14 +57,15 @@ export interface StrictPopupProps extends StrictPortalProps {
   /** Invert the colors of the popup */
   inverted?: boolean
 
-  /** Offset value to apply to rendered popup. Accepts the following units:
-   * - px or unit-less, interpreted as pixels
-   * - %, percentage relative to the length of the trigger element
-   * - %p, percentage relative to the length of the popup element
-   * - vw, CSS viewport width unit
-   * - vh, CSS viewport height unit
+  /**
+   * Offset values in px unit to apply to rendered popup. The basic offset accepts an
+   * array with two numbers in the form [skidding, distance]:
+   * - `skidding` displaces the Popup along the reference element
+   * - `distance` displaces the Popup away from, or toward, the reference element in the direction of its placement. A positive number displaces it further away, while a negative number lets it overlap the reference.
+   *
+   * @see https://popper.js.org/docs/v2/modifiers/offset/
    */
-  offset?: number | string
+  offset?: [number, number?] | PopperOffsetsFunction
 
   /** Events triggering the popup. */
   on?: 'hover' | 'click' | 'focus' | ('hover' | 'click' | 'focus')[]
@@ -110,8 +119,11 @@ export interface StrictPopupProps extends StrictPortalProps {
   /** Tells `Popper.js` to use the `position: fixed` strategy to position the popover. */
   positionFixed?: boolean
 
-  /** An object containing custom settings for the Popper.js modifiers. */
-  popperModifiers?: object
+  /** A wrapping element for an actual content that will be used for positioning. */
+  popper?: SemanticShorthandItem<React.HTMLAttributes<HTMLDivElement>>
+
+  /** An array containing custom settings for the Popper.js modifiers. */
+  popperModifiers?: any[]
 
   /** A popup can have dependencies which update will schedule a position update. */
   popperDependencies?: any[]
@@ -120,7 +132,7 @@ export interface StrictPopupProps extends StrictPortalProps {
   size?: 'mini' | 'tiny' | 'small' | 'large' | 'huge'
 
   /** Custom Popup style. */
-  style?: Object
+  style?: React.CSSProperties
 
   /** Element to be rendered in-place where the popup is defined. */
   trigger?: React.ReactNode

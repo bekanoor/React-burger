@@ -1,6 +1,8 @@
+import cx from 'clsx'
 import _ from 'lodash'
-import cx from 'classnames'
-import React, { cloneElement, isValidElement } from 'react'
+import * as React from 'react'
+
+const DEPRECATED_CALLS = {}
 
 // ============================================================
 // Factories
@@ -22,13 +24,16 @@ export function createShorthand(Component, mapValueToProps, val, options = {}) {
   if (typeof Component !== 'function' && typeof Component !== 'string') {
     throw new Error('createShorthand() Component must be a string or function.')
   }
+
   // short circuit noop values
-  if (_.isNil(val) || _.isBoolean(val)) return null
+  if (_.isNil(val) || _.isBoolean(val)) {
+    return null
+  }
 
   const valIsString = _.isString(val)
   const valIsNumber = _.isNumber(val)
   const valIsFunction = _.isFunction(val)
-  const valIsReactElement = isValidElement(val)
+  const valIsReactElement = React.isValidElement(val)
   const valIsPropsObject = _.isPlainObject(val)
   const valIsPrimitiveValue = valIsString || valIsNumber || _.isArray(val)
 
@@ -108,13 +113,35 @@ export function createShorthand(Component, mapValueToProps, val, options = {}) {
   // ----------------------------------------
 
   // Clone ReactElements
-  if (valIsReactElement) return cloneElement(val, props)
+  if (valIsReactElement) {
+    return React.cloneElement(val, props)
+  }
+
+  if (typeof props.children === 'function') {
+    return props.children(Component, { ...props, children: undefined })
+  }
 
   // Create ReactElements from built up props
-  if (valIsPrimitiveValue || valIsPropsObject) return <Component {...props} />
+  if (valIsPrimitiveValue || valIsPropsObject) {
+    return React.createElement(Component, props)
+  }
 
   // Call functions with args similar to createElement()
-  if (valIsFunction) return val(Component, props, props.children)
+  // TODO: V3 remove the implementation
+  if (valIsFunction) {
+    if (process.env.NODE_ENV !== 'production') {
+      if (!DEPRECATED_CALLS[Component]) {
+        DEPRECATED_CALLS[Component] = true
+
+        // eslint-disable-next-line no-console
+        console.warn(
+          `Warning: There is a deprecated shorthand function usage for "${Component}". It is deprecated and will be removed in v3 release. Please follow our upgrade guide: https://github.com/Semantic-Org/Semantic-UI-React/pull/4029`,
+        )
+      }
+    }
+
+    return val(Component, props, props.children)
+  }
   /* eslint-enable react/prop-types */
 }
 
@@ -140,9 +167,19 @@ export function createShorthandFactory(Component, mapValueToProps) {
 // ============================================================
 // HTML Factories
 // ============================================================
-export const createHTMLDivision = createShorthandFactory('div', (val) => ({ children: val }))
-export const createHTMLIframe = createShorthandFactory('iframe', (src) => ({ src }))
-export const createHTMLImage = createShorthandFactory('img', (val) => ({ src: val }))
-export const createHTMLInput = createShorthandFactory('input', (val) => ({ type: val }))
-export const createHTMLLabel = createShorthandFactory('label', (val) => ({ children: val }))
-export const createHTMLParagraph = createShorthandFactory('p', (val) => ({ children: val }))
+export const createHTMLDivision = /* #__PURE__ */ createShorthandFactory('div', (val) => ({
+  children: val,
+}))
+export const createHTMLIframe = /* #__PURE__ */ createShorthandFactory('iframe', (src) => ({ src }))
+export const createHTMLImage = /* #__PURE__ */ createShorthandFactory('img', (val) => ({
+  src: val,
+}))
+export const createHTMLInput = /* #__PURE__ */ createShorthandFactory('input', (val) => ({
+  type: val,
+}))
+export const createHTMLLabel = /* #__PURE__ */ createShorthandFactory('label', (val) => ({
+  children: val,
+}))
+export const createHTMLParagraph = /* #__PURE__ */ createShorthandFactory('p', (val) => ({
+  children: val,
+}))

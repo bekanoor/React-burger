@@ -4,7 +4,6 @@ import './index.css';
 import {Button, Image, Navbar, Container, Nav } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HeaderMenu from './headerMenu.js' 
-import NavMenu from './navMenu'
 import EatList from './eatList'
 import Carousel from './carousel'
 import Modal from './modal'
@@ -36,9 +35,8 @@ function Main() {
     }
 
     return (
-        <div className="">
-            <HeaderMenu/>
-            <NavMenu basket={basket} setActive={setModalActive} />
+        <div className="wrapper">
+            <HeaderMenu  basket={basket} setActive={setModalActive}/>
             {/* <Carousel/> */}
             <EatList bd={burgers} addItemToBasket={addItemToBasket} foodType="Бэргеры" name="Бэргеры"/>
             <EatList bd={snacks} addItemToBasket={addItemToBasket} foodType="Закуски" name="Закуски"/> 

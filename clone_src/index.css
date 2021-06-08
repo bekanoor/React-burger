@@ -2,59 +2,18 @@
 html { scroll-behavior: smooth; }
 
 body { font-family: 'Roboto', sans-serif; }
-nav {    display: block;}
+
 .wrapper {
     margin: 0 auto;
     width: 1280px;
     background-color: rgb(255, 255, 255);
 }
-.header {
-    width: 1280px;
-    margin: 0 auto;
-}
-.header img{
-    width: 70px;
-    height: 70px;
-}
-/* .navigation__wrapper {
-    width: 100%;
-    position: sticky;
-    top: 0px;
-    background-color: white;
-    z-index: 10;
-} */
-.navigation__wrapper {
-    position: static;
-	top:0;
-	left:0;
-	width:86%;
-    z-index: 10;
-}
-/* .navigation__wrapper::before {
-    content: "";
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    box-shadow: rgb(6 5 50 / 10%) 0px 4px 30px;
-} */
-.navigation__wrapper:first-child {
-    background:#22809f;
-}
 .navigation {
-    position: relative;
-    width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
+    position: -webkit-sticky;
+position: sticky;
+top: 20px;
 }
-
-
-.me-auto { font-family: 'Roboto'; }
-.section__title {
-    width: 1280px;
-    margin: 0 auto;
-}
+.section__title{ margin: 32px 0px; }
 .header__title_h {
     font-weight: bold;
     font-size: 24px;
@@ -66,8 +25,7 @@ nav {    display: block;}
 .swiper-container {
     width: 1300px;
     height: 410px;
-    z-index: 1;
-}
+  }
   
 .swiper-slide img {
     box-shadow: rgba(84, 87, 99, 0.5) 0px 2px 10px -2px;
@@ -82,8 +40,6 @@ nav {    display: block;}
     margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
-    width: 1280px;
-    margin: 0 auto;
 }
 
 .burger__item {
@@ -96,7 +52,6 @@ nav {    display: block;}
     width: 250px;
     height: 250px;
     position: relative;
-    z-index: 1;
 }
 
 .burger__item_img:hover {
@@ -140,7 +95,6 @@ nav {    display: block;}
     opacity: 0;
     transition: 0.5s;
     pointer-events: none;
-    z-index: 3;
 }
 
 .modalWindow.active {
@@ -156,7 +110,6 @@ nav {    display: block;}
     background-color: white;
     max-width: 560px;
     min-height: 300px;
-    z-index: 3;
 }
 
 .modal__content h1 {
@@ -196,8 +149,13 @@ nav {    display: block;}
     text-align: right;
 }
 
-.modal__item_order > div{ display: inline-block; }
-.modal__item_btn { text-align: right; }
+.modal__item_order > div{
+    display: inline-block;
+}
+
+.modal__item_btn {
+    text-align: right;
+}
 
 .modal__item_order h4{
     font-size: 1.75rem;

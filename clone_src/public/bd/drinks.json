@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Coca-Cola",
+        "path": "/src/public/img/cola.jpg",
+        "description": "0.5 л",
+        "price": 50
+    },
+    {
+        "name": "Sprite",
+        "path": "/src/public/img/sprite.jpg",
+        "description": "0.5 л",
+        "price": 50
+    },
+    {
+        "name": "Fanta",
+        "path": "/src/public/img/fanta.jpg",
+        "description": "0.5 л",
+        "price": 50
+    },
+    {
+        "name": "Облепиховый пунш",
+        "path": "/src/public/img/oblepiha-punsh.jpeg",
+        "description": "Согревающий напиток с сиропом из ягод облепихи и лимонного сока",
+        "price": 99
+    },
+    {
+        "name": "Марокканский пунш",
+        "path": "/src/public/img/marocco-punsh.jpeg",
+        "description": "Согревающий пряный напиток с мякотью апельсина, соком лайма, имбирем, корицей, бадьяном, кориандром и гвоздикой",
+        "price": 99
+    },
+    {
+        "name": "Клюквенный морс",
+        "path": "/src/public/img/mors.jpg",
+        "description": "0,45 л",
+        "price": 70
+    }
+]

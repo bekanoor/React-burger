@@ -1,10 +1,10 @@
-import React, {useState, useRef, Component} from 'react';
+import React, {useState, useRef, Component,useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import {Button, Image, Navbar, Container, Nav } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HeaderMenu from './headerMenu.js' 
-import NavMenu from './navMenu'
+import NavBar from './navbar'
 import EatList from './eatList'
 import Carousel from './carousel'
 import Modal from './modal'
@@ -13,20 +13,24 @@ const snacks = require('./public/bd/snacks.json')
 const desserts = require('./public/bd/desserts.json')
 const drinks = require('./public/bd/drinks.json')
 
+
 function Main() {
     const[state, setState] = useState({
             modalActive: false,
-            basket: []
+            basket: [],
     })
-        
     const {modalActive, basket} = state;
-
+    
     function setModalActive(isActive) {
         setState({...state, modalActive: isActive})
     }
-
+   
     function addItemToBasket(item) { 
-        setState({...state, basket: [...basket, item]})
+        if(basket === null) {
+            setState({...state, basket: [...basket, 'sss']})
+        } else {
+            setState({...state, basket: [...basket, item]})
+        }
     }
 
     function removeItem(index) {
@@ -38,12 +42,12 @@ function Main() {
     return (
         <div className="">
             <HeaderMenu/>
-            <NavMenu basket={basket} setActive={setModalActive} />
-            {/* <Carousel/> */}
+            <NavBar  basket={basket} setActive={setModalActive} />
+            <Carousel/>
             <EatList bd={burgers} addItemToBasket={addItemToBasket} foodType="Бэргеры" name="Бэргеры"/>
-            <EatList bd={snacks} addItemToBasket={addItemToBasket} foodType="Закуски" name="Закуски"/> 
+            {/* <EatList bd={snacks} addItemToBasket={addItemToBasket} foodType="Закуски" name="Закуски"/> 
             <EatList bd={desserts} addItemToBasket={addItemToBasket} foodType="Десерты" name="Десерты"/>
-            <EatList bd={drinks} addItemToBasket={addItemToBasket} foodType="Напитки" name="Напитки"/> 
+            <EatList bd={drinks} addItemToBasket={addItemToBasket} foodType="Напитки" name="Напитки"/>  */}
             <Modal basket={basket}  active={modalActive} setActive={setModalActive} removeItem={removeItem}/>
             
         </div>

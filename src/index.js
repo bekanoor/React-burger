@@ -8,6 +8,7 @@ import NavBar from './navbar'
 import EatList from './eatList'
 import Carousel from './carousel'
 import Modal from './modal'
+import Footer from './footer'
 const burgers = require('./public/bd/burgers.json') 
 const snacks = require('./public/bd/snacks.json') 
 const desserts = require('./public/bd/desserts.json')
@@ -43,12 +44,13 @@ function Main() {
         <div className="">
             <HeaderMenu/>
             <NavBar  basket={basket} setActive={setModalActive} />
-            <Carousel/>
+            {/* <Carousel/>
             <EatList bd={burgers} addItemToBasket={addItemToBasket} foodType="Бэргеры" name="Бэргеры"/>
-            {/* <EatList bd={snacks} addItemToBasket={addItemToBasket} foodType="Закуски" name="Закуски"/> 
+            <EatList bd={snacks} addItemToBasket={addItemToBasket} foodType="Закуски" name="Закуски"/> 
             <EatList bd={desserts} addItemToBasket={addItemToBasket} foodType="Десерты" name="Десерты"/>
-            <EatList bd={drinks} addItemToBasket={addItemToBasket} foodType="Напитки" name="Напитки"/>  */}
-            <Modal basket={basket}  active={modalActive} setActive={setModalActive} removeItem={removeItem}/>
+            <EatList bd={drinks} addItemToBasket={addItemToBasket} foodType="Напитки" name="Напитки"/> 
+            <Modal basket={basket}  active={modalActive} setActive={setModalActive} removeItem={removeItem}/> */}
+            <Footer/>
             
         </div>
     );

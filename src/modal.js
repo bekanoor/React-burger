@@ -10,12 +10,11 @@ export default function Modal({active, setActive, basket, removeItem}) {
             <div className='modal__content' onClick = {e => e.stopPropagation()}>
                     <h1>Ваш заказ</h1>
                     <hr/>
-                   
                     { //check on empty basket
                         basket.length === 0 ? 
                             <div className='modal_basket'>
                                 <img src='/src/public/img/simple-basket.jpg'/>
-                                <h4>Корзина пуста. Выберите бэргер из меню или хватит палить чужой код в час ночи.</h4>
+                                <h5>Корзина пуста. Выберите бэргер из меню или хватит палить чужой код в час ночи.</h5>
                             </div> 
                             : basket.map((item, index) => { 
                             sum += item.price;
@@ -30,7 +29,7 @@ export default function Modal({active, setActive, basket, removeItem}) {
                     <hr/>
                     <div className="modal__item_order">
                         <div>Сумма заказа:&nbsp;</div>
-                        <div>{sum} ₽</div>
+                        <div className='modal__item_orderSum'>{sum} ₽</div>
                     </div>
                     <div className="modal__item_btn" >
                         <Button variant="warning">Оформить заказ</Button>{' '}

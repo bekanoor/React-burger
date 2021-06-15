@@ -9,7 +9,7 @@ export default function HeaderMenu() {
                     <Image src="/src/public/img/classic_cheese.jpg"/>
                     <div>
                         <h2 className="header__title_h">♂️Right♂️ Burgers</h2>
-                        <h4 className="header__title_p">Бургеры прямиком из Dungeon! </h4>
+                        <h4 className="header__title_p">Бэргеры прямиком из Dungeon! </h4>
                     </div>
             </div>
         </div>

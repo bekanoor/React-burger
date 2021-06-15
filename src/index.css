@@ -184,28 +184,59 @@ nav {    display: block;}
 
 .modal__item_order {
     text-align: right;
+    padding: 0px 15px 15px 0px;
+    font-size: 18px;
+    font-family: 'Roboto';
 }
 
 .modal__item_order > div{ display: inline-block; }
-.modal__item_btn { text-align: right; }
 
-.modal__item_order h4{
+.modal__item_btn { text-align: right; padding: 0px 15px 15px 0px;}
+
+.modal__item_order h4 {
     font-size: 1.75rem;
     color: rgb(223, 89, 41);
 }
+.modal__item_orderSum { font-weight: bold; font-size: 20px; }
 .modal__item button {
     height: 40px;
     width: 40px;
     margin-top: 5px;
 }
-.modal_basket img{
-   height: 150px;
-   width: 150px;
+
+.modal_basket img {
+   height: 125px;
+   opacity: 0.8;
+   width: 125px;
 }
-.modal_basket  {
+
+.modal_basket h5{ color: #746d6c; }
+
+.modal_basket {
     width: 500px;
     height: 200px;
     margin: 0 auto;
     text-align: center;
+}
 
+.modal__item_btn button {
+    font-size: 18px;
+}
+/*footer*/
+.footer__wrapper {
+    width: 1280px;
+    height: 450px;
+    background-color: #746d6c;
+    margin: 0 auto ;
+}
+
+.footer__list {
+    width: 100%;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__list_ul {
+    column-count: 3;
 }

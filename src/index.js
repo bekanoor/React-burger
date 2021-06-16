@@ -1,7 +1,6 @@
-import React, {useState, useRef, Component,useEffect} from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import {Button, Image, Navbar, Container, Nav } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HeaderMenu from './headerMenu.js' 
 import NavBar from './navbar'
@@ -44,13 +43,13 @@ function Main() {
         <div className="">
             <HeaderMenu/>
             <NavBar  basket={basket} setActive={setModalActive} />
-            {/* <Carousel/>
+            <Carousel/>
             <EatList bd={burgers} addItemToBasket={addItemToBasket} foodType="Бэргеры" name="Бэргеры"/>
             <EatList bd={snacks} addItemToBasket={addItemToBasket} foodType="Закуски" name="Закуски"/> 
             <EatList bd={desserts} addItemToBasket={addItemToBasket} foodType="Десерты" name="Десерты"/>
             <EatList bd={drinks} addItemToBasket={addItemToBasket} foodType="Напитки" name="Напитки"/> 
-            <Modal basket={basket}  active={modalActive} setActive={setModalActive} removeItem={removeItem}/> */}
-            <Footer/>
+            <Modal basket={basket}  active={modalActive} setActive={setModalActive} removeItem={removeItem}/>
+            <Footer name="Контакты"/>
             
         </div>
     );

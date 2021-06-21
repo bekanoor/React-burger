@@ -1,7 +1,9 @@
-import React, {useState} from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, {useReducer, useState} from 'react'
+import {Context} from './context'
+import ReactDOM from 'react-dom'
+import reducer from './reducer'
+import './index.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import HeaderMenu from './headerMenu.js' 
 import NavBar from './navbar'
 import EatList from './eatList'
@@ -13,8 +15,8 @@ const snacks = require('./public/bd/snacks.json')
 const desserts = require('./public/bd/desserts.json')
 const drinks = require('./public/bd/drinks.json')
 
-
 function Main() {
+    const [fettle, dispatch] = useReducer(reducer, [])
     const[state, setState] = useState({
             modalActive: false,
             basket: [],
@@ -26,11 +28,11 @@ function Main() {
     }
    
     function addItemToBasket(item) { 
-        if(basket === null) {
-            setState({...state, basket: [...basket, 'sss']})
-        } else {
-            setState({...state, basket: [...basket, item]})
-        }
+        // setState({...state, basket: [...basket, item]})
+        dispatch({
+            type: 'addItem',
+            payload: item    
+        })
     }
 
     function removeItem(index) {
@@ -40,18 +42,21 @@ function Main() {
     }
 
     return (
-        <div className="">
-            <HeaderMenu/>
-            <NavBar  basket={basket} setActive={setModalActive} />
-            <Carousel/>
-            <EatList bd={burgers} addItemToBasket={addItemToBasket} foodType="Бэргеры" name="Бэргеры"/>
-            <EatList bd={snacks} addItemToBasket={addItemToBasket} foodType="Закуски" name="Закуски"/> 
-            <EatList bd={desserts} addItemToBasket={addItemToBasket} foodType="Десерты" name="Десерты"/>
-            <EatList bd={drinks} addItemToBasket={addItemToBasket} foodType="Напитки" name="Напитки"/> 
-            <Modal basket={basket}  active={modalActive} setActive={setModalActive} removeItem={removeItem}/>
-            <Footer name="Контакты"/>
-            
-        </div>
+        <Context.Provider value={{
+            setModalActive, addItemToBasket, removeItem, dispatch
+        }}>
+            <div>
+                <HeaderMenu/>
+                <NavBar  basket={basket} setActive={setModalActive} />
+                <Carousel/>
+                <EatList bd={burgers} foodType="Бэргеры" name="Бэргеры"/>
+                <EatList bd={snacks} foodType="Закуски" name="Закуски"/> 
+                <EatList bd={desserts} foodType="Десерты" name="Десерты"/>
+                <EatList bd={drinks} foodType="Напитки" name="Напитки"/> 
+                <Modal basket={basket}  active={modalActive} />
+                <Footer name="Контакты"/>
+            </div>
+        </Context.Provider>
     );
 }
 

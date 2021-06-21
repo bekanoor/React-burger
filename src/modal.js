@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import {Button, Image} from 'react-bootstrap'
+import {Context} from './context'
 
-export default function Modal({active, setActive, basket, removeItem}) {
+export default function Modal({active, basket}) {
     let sum = 0;
+    const {setModalActive, removeItem} = useContext(Context);
 
     const basketOutput = () => {
         return basket.map((item, index) => { 
@@ -17,7 +19,7 @@ export default function Modal({active, setActive, basket, removeItem}) {
     }
 
     return (
-        <div className={active ? 'modalWindow active' : 'modalWindow'} onClick={() => setActive(false)}>
+        <div className={active ? 'modalWindow active' : 'modalWindow'} onClick={() => setModalActive(false)}>
             <div className='modal__content' onClick = {e => e.stopPropagation()}>
                     <h1>Ваш заказ</h1>
                     <hr/>

@@ -3,7 +3,8 @@ import {Button, Image} from 'react-bootstrap'
 import {Context} from './context'
 
 export default function EatList(props) {
-    const {addItemToBasket} = useContext(Context);
+    //const {addItemToBasket} = useContext(Context);
+    const {dispath} = useContext(Context);
 
     const review = props.bd.map((item, index) => 
         <div className='burger__item' key={index}>
@@ -14,7 +15,10 @@ export default function EatList(props) {
                 <div className='burger__item_price'>{item.price} ₽</div>
                 <div className='burger__item_button'>
                     <Button 
-                        onClick={() => addItemToBasket(item)} 
+                        onClick={() => dispath({
+                            type: 'addItem',
+                            payload: item
+                        })} 
                         variant="danger">
                         Заказать
                     </Button>

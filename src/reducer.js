@@ -2,12 +2,9 @@ export default function (state, action) {
     switch (action.type) {
         default: 
             case 'addItem': 
-                return [
+                return ({
                     ...state, 
-                    {
-                        basket: [...basket, item]
-                    }
-                ]
-
+                    basket: [...basket, item]
+                })
     }
 }

@@ -133,6 +133,11 @@ body { font-family: 'Roboto', sans-serif; }
 
 .burger__item_price { float: left; margin-top: 8px; }
 
+.section__title {
+    width: 1280px;
+    margin: 0 auto;
+}
+
 /*-----modalView-----*/
 
 .modalWindow {

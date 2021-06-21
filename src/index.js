@@ -43,7 +43,7 @@ function Main() {
 
     return (
         <Context.Provider value={{
-            setModalActive, addItemToBasket, removeItem, dispatch
+            setModalActive, removeItem, dispatch
         }}>
             <div>
                 <HeaderMenu/>

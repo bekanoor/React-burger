@@ -4,7 +4,7 @@ import {Context} from './context'
 
 export default function EatList(props) {
     //const {addItemToBasket} = useContext(Context);
-    const {dispath} = useContext(Context);
+    const {dispatch} = useContext(Context);
 
     const review = props.bd.map((item, index) => 
         <div className='burger__item' key={index}>
@@ -15,9 +15,9 @@ export default function EatList(props) {
                 <div className='burger__item_price'>{item.price} ₽</div>
                 <div className='burger__item_button'>
                     <Button 
-                        onClick={() => dispath({
+                        onClick={() => dispatch({
                             type: 'addItem',
-                            payload: item
+                            payload: item, 
                         })} 
                         variant="danger">
                         Заказать

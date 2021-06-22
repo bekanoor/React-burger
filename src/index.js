@@ -16,7 +16,7 @@ const desserts = require('./public/bd/desserts.json')
 const drinks = require('./public/bd/drinks.json')
 
 function Main() {
-    const [fettle, dispatch] = useReducer(reducer, [])
+    const [fettle, dispatch] = useReducer(reducer, {basket: []})
     const[state, setState] = useState({
             modalActive: false,
             basket: [],

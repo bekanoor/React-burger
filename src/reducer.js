@@ -4,7 +4,7 @@ export default function (state, action) {
             case 'addItem': 
                 return  {
                     ...state, 
-                    basket: [...basket, item]
+                    basket: [action.payload]
                 }
     }
 }

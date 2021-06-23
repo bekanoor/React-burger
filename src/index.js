@@ -15,8 +15,12 @@ const snacks = require('./public/bd/snacks.json')
 const desserts = require('./public/bd/desserts.json')
 const drinks = require('./public/bd/drinks.json')
 
+function init (state) {
+    return state;
+}
+
 function Main() {
-    const [fettle, dispatch] = useReducer(reducer, {basket: []})
+    const [fettle, dispatch] = useReducer(reducer, {basket: []}, init)
     const[state, setState] = useState({
             modalActive: false,
             basket: [],
@@ -47,7 +51,7 @@ function Main() {
         }}>
             <div>
                 <HeaderMenu/>
-                <NavBar  basket={basket} setActive={setModalActive} />
+                <NavBar  basket={fettle.basket} setActive={setModalActive} />
                 <Carousel/>
                 <EatList bd={burgers} foodType="Бэргеры" name="Бэргеры"/>
                 <EatList bd={snacks} foodType="Закуски" name="Закуски"/> 

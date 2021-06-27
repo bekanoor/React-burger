@@ -2,7 +2,9 @@
     "cSpell.language": ",ru",
     "cSpell.words": [
         "basket",
-        "props"
+        "carousel",
+        "props",
+        "reducer"
     ],
     "git.ignoreLimitWarning": true
 }

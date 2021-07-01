@@ -36,7 +36,7 @@ export default function Modal({ active, basket }) {
       className={active ? 'modalWindow active' : 'modalWindow'}
       onClick={() =>
         dispatch({
-          type: 'ADD_MODAL_ACTIVE',
+          type: 'SET_MODAL',
           payload: false,
         })
       }

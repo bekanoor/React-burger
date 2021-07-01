@@ -1,14 +1,16 @@
-export default function (state, action) {
+import { defaultState } from './store';
+
+export const reducer = (state = defaultState, action) => {
   switch (action.type) {
+    case 'SET_MODAL':
+      return {
+        ...state,
+        modalActive: action.payload,
+      };
     case 'ADD_ITEM':
       return {
         ...state,
         basket: [...state.basket, action.payload],
-      };
-    case 'ADD_MODAL_ACTIVE':
-      return {
-        ...state,
-        modalActive: action.payload,
       };
     case 'REMOVE_ITEM':
       let temp = state.basket.slice('');
@@ -21,4 +23,4 @@ export default function (state, action) {
     default:
       return state;
   }
-}
+};

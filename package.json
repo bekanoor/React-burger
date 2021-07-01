@@ -1,8 +1,8 @@
 {
-  "name": "a-viewer",
+  "name": "react-burger",
   "version": "1.0.0",
-  "description": "description",
-  "main": "index.jsx",
+  "description": "the best maman burger",
+  "main": "index.js",
   "scripts": {
     "dev": "webpack --mode production",
     "build": "webpack --mode production",

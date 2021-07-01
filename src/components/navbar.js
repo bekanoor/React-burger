@@ -35,7 +35,7 @@ export default function NavBar(props) {
           className="nav_btn"
           onClick={() =>
             dispatch({
-              type: 'ADD_MODAL_ACTIVE',
+              type: 'SET_MODAL',
               payload: true,
             })
           }

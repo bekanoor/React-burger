@@ -2,37 +2,35 @@ import React from 'react';
 
 export default function Footer({ name }) {
   return (
-    <footer className="footer__" id={name}>
-      <div className="footer__wrapper">
+    <footer id={name}>
+      <div className="footer-wrapper">
         <div>
-          <div className="footer__list">
-            <ul className="footer__list_ul">
-              <li className="footer__list_ul_item">
-                <a href="#">Создай свой бэргер</a>
-              </li>
-              <li className="footer__list_ul_item">
-                <a href="#">Карьера</a>
-              </li>
-              <li className="footer__list_ul_item">
-                <a href="#">FAQ</a>
-              </li>
-              <li className="footer__list_ul_item">
-                <a href="#">Блог</a>
-              </li>
-              <li className="footer__list_ul_item">
-                <a href="#">Калорийность и состав</a>
-              </li>
-              <li className="footer__list_ul_item">
-                <a href="#">Рагнум</a>
-              </li>
-              <li className="footer__list_ul_item">
-                <a href="#">Скукнум</a>
-              </li>
-              <li className="footer__list_ul_item">
-                <a href="#">Доставка</a>
-              </li>
-            </ul>
-          </div>
+          <ul>
+            <li>
+              <a href="#">Создай свой бэргер</a>
+            </li>
+            <li>
+              <a href="#">Карьера</a>
+            </li>
+            <li>
+              <a href="#">FAQ</a>
+            </li>
+            <li>
+              <a href="#">Блог</a>
+            </li>
+            <li>
+              <a href="#">Калорийность и состав</a>
+            </li>
+            <li>
+              <a href="#">Рагнум</a>
+            </li>
+            <li>
+              <a href="#">Скукнум</a>
+            </li>
+            <li>
+              <a href="#">Доставка</a>
+            </li>
+          </ul>
           <div className="footer__info">
             © Copyright 2021 — 5021 ООО «MAMIN BЭRGER».
             <br />
@@ -48,7 +46,7 @@ export default function Footer({ name }) {
             Возраст 14+
           </div>
         </div>
-        <div className="footer_socialMedia">
+        <div className="social-media">
           <a href="https://vk.com/passive_voice" target="_blank">
             <img src="/src/public/img/vk_logo.svg" />
           </a>

@@ -10,11 +10,11 @@ export default function NavBar(props) {
   window.addEventListener('scroll', changeNavbar);
 
   return (
-    <nav className={nav ? 'navbar__ active' : 'navbar__'}>
-      <div className="navbar__content">
+    <nav className={nav ? 'nav-menu active' : 'nav-menu'}>
+      <div className="nav-menu__content">
         <ul>
           <li>
-            <a className="navbar__content_bold" href="#Бэргеры">
+            <a className="nav-menu nav-menu_bold" href="#Бэргеры">
               Бэргеры
             </a>
           </li>
@@ -32,7 +32,6 @@ export default function NavBar(props) {
           </li>
         </ul>
         <Button
-          className="nav_btn"
           onClick={() =>
             dispatch({
               type: 'SET_MODAL',

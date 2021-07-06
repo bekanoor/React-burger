@@ -6,16 +6,25 @@ export default function Modal({ active, basket }) {
   let sum = 0;
   const { dispatch } = useContext(Context);
 
+  const orderAmount = () => {
+    return (
+      <div className="modal-order-amount">
+        <div>
+          Сумма заказа:&nbsp;<span className="modal-order-amount__sum">{sum} ₽</span>
+        </div>
+        <Button variant="warning">Оформить заказ</Button>{' '}
+      </div>
+    );
+  };
   const basketOutput = () => {
     return basket.map((item, index) => {
       sum += item.price;
       return (
-        <div key={index} className="modal__item">
+        <div key={index} className="basket-items">
           <Image src={item.path} alt={item.path} />
-          <div className="modal__item_title">{item.name}</div>
-          <div className="modal__item_price">{item.price}</div>
+          <div className="basket-items__title">{item.name}</div>
+          <div className="basket-items__price">{item.price}</div>
           <Button
-            className="modal__item_br"
             variant="danger"
             onClick={() =>
               dispatch({
@@ -33,7 +42,7 @@ export default function Modal({ active, basket }) {
 
   return (
     <div
-      className={active ? 'modalWindow active' : 'modalWindow'}
+      className={active ? 'modal-window active' : 'modal-window'}
       onClick={() =>
         dispatch({
           type: 'SET_MODAL',
@@ -41,13 +50,13 @@ export default function Modal({ active, basket }) {
         })
       }
     >
-      <div className="modal__content" onClick={(e) => e.stopPropagation()}>
+      <div className="modal-review" onClick={(e) => e.stopPropagation()}>
         <h1>Ваш заказ</h1>
         <hr />
         {
           //check on empty basket
           basket.length === 0 ? (
-            <div className="modal_basket">
+            <div className="empty-basket">
               <img src="/src/public/img/simple-basket.jpg" />
               <h5>
                 Корзина пуста. Выберите бэргер из меню или хватит палить чужой код в час ночи.
@@ -58,13 +67,7 @@ export default function Modal({ active, basket }) {
           )
         }
         <hr />
-        <div className="modal__item_order">
-          <div>Сумма заказа:&nbsp;</div>
-          <div className="modal__item_orderSum">{sum} ₽</div>
-        </div>
-        <div className="modal__item_btn">
-          <Button variant="warning">Оформить заказ</Button>{' '}
-        </div>
+        {basket.length !== 0 ? orderAmount() : ''}
       </div>
     </div>
   );

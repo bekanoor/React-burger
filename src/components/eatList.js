@@ -6,13 +6,13 @@ export default function EatList(props) {
   const { dispatch } = useContext(Context);
 
   const review = props.bd.map((item, index) => (
-    <div className="burger__item" key={index}>
-      <Image className="burger__item_img" src={item.path} alt={item.path} />
-      <div className="burger__item_title">{item.name}</div>
-      <div className="burger__item_description">{item.description}</div>
-      <div className="burger__items">
-        <div className="burger__item_price">{item.price} ₽</div>
-        <div className="burger__item_button">
+    <div className="meal-item" key={index}>
+      <Image src={item.path} alt={item.path} />
+      <div className="meal-item__title">{item.name}</div>
+      <h4 className="meal-item__subtitle">{item.description}</h4>
+      <div className="meal-items__footer">
+        <div className="meal-item__price">{item.price} ₽</div>
+        <div className="meal-item__button">
           <Button
             onClick={() =>
               dispatch({
@@ -31,10 +31,10 @@ export default function EatList(props) {
 
   return (
     <div>
-      <h1 className="section__title" id={props.name}>
+      <h1 className="section-food-title" id={props.name}>
         {props.foodType}
       </h1>
-      <div className="burger__preview">{review}</div>
+      <div className="meal-preview">{review}</div>
     </div>
   );
 }

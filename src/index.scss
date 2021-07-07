@@ -33,18 +33,19 @@ h6 {
 }
 
 /*navbar*/
+.nav-menu {
+  width: 100%;
+  position: sticky;
+  top: 0px;
+  background-color: white;
+  z-index: 2;
+}
+
+.nav-menu.active {
+  box-shadow: rgb(6 5 50 / 10%) 0px 4px 30px;
+}
 
 nav {
-  .nav-menu {
-    width: 100%;
-    position: sticky;
-    top: 0px;
-    background-color: white;
-    z-index: 2;
-  }
-  .nav-menu.active {
-    box-shadow: rgb(6 5 50 / 10%) 0px 4px 30px;
-  }
   .nav-menu__content {
     width: 1280px;
     margin: 0 auto;
@@ -65,7 +66,7 @@ nav {
   a:hover {
     color: $primary-color;
   }
-  .nav-menu.nav-menu_bold {
+  .nav-menu.bold {
     font-weight: 600;
     font-size: large;
   }

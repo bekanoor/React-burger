@@ -1,11 +1,11 @@
 import React from 'react';
 import { Context } from '../context';
 import { useDispatch, useSelector } from 'react-redux';
-import HeaderMenu from './HeaderMenu';
-import NavBar from './Navbar';
-import EatList from './EatList';
+import HeaderMenu from './Header';
+import NavBar from './NavbarMenu';
+import EatList from './MealList';
 import Carousel from './Carousel';
-import Modal from './Modal';
+import Modal from './ModalWindow';
 import Footer from './Footer';
 const burgers = require('../public/bd/burgers.json');
 const snacks = require('../public/bd/snacks.json');

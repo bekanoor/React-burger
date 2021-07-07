@@ -14,7 +14,7 @@ export default function NavBar(props) {
       <div className="nav-menu__content">
         <ul>
           <li>
-            <a className="nav-menu nav-menu_bold" href="#Бэргеры">
+            <a className="nav-menu bold" href="#Бэргеры">
               Бэргеры
             </a>
           </li>
